@@ -1,0 +1,11 @@
+POST http://localhost:15672/api/exchanges/%2F/amq.default/publish
+Content-Type: application/json
+
+{
+  "properties": {
+    "content-type": "application/json"
+  },
+  "routing_key": "telegram-notification-queue",
+  "payload": "{\"chat_id\":1045002896, \"message\":\"Привет, появилась новая вакансия!\"}",
+  "payload": "string"
+}
