@@ -7,5 +7,5 @@ Content-Type: application/json
   },
   "routing_key": "telegram-notification-queue",
   "payload": "{\"chat_id\":1045002896, \"message\":\"Привет, появилась новая вакансия!\"}",
-  "payload": "string"
+  "payload_encoding": "string"
 }
