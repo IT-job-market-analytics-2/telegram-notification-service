@@ -29,6 +29,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     @Override
     public void onUpdateReceived(Update update) {
         if(update.hasMessage() && update.getMessage().hasText()){
+
             long chatId = update.getMessage().getChatId();
             String getFirstName = update.getMessage().getChat().getFirstName();
 
@@ -41,6 +42,8 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     public void sendMessage(long chatId, String textToSend){
         SendMessage sendMessage = new SendMessage();
+        sendMessage.disableWebPagePreview();
+        sendMessage.enableHtml(true);
         sendMessage.setChatId(chatId);
         sendMessage.setText(textToSend);
 
