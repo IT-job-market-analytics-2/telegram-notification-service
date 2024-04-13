@@ -13,7 +13,7 @@ public class RabbitService {
         this.telegramBot = telegramBot;
     }
 
-    @RabbitListener(queues = {"telegram-notifications-queue"})
+    @RabbitListener(queues = "${spring.rabbitmq.queue.telegram-notifications}")
     public void listen(TelegramNotificationDto message){
         telegramBot.sendMessage(message.getChatId(), message.getMessage());
     }

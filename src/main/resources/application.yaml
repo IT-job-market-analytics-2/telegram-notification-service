@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: Telegram-Notification
+
+  rabbitmq:
+    host: localhost
+    username: analytics_service
+    password: password
+    port: 5672
+    queue:
+      telegram-notifications: telegram-notifications-queue
+
+telegram:
+  bot:
+    name: it_jobs_notifiers_bot
+    token: 7140981397:AAFrPr9ZUPnqGO9QVH6YbHoBXFMd13igkAo
+
+
