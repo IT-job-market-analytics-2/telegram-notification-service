@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitConf {
 
-    private final static String QUEUE_NAME = "telegram-notification-queue";
+    private final static String QUEUE_NAME = "telegram-notifications-queue";
 
     @Bean
     public Queue queue(){

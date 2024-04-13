@@ -9,5 +9,5 @@ public class TelegramNotificationDto {
     private String message;
 
     @JsonProperty("chat_id")
-    private Integer chatId;
+    private Long chatId;
 }
