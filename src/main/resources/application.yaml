@@ -16,5 +16,5 @@ telegram:
     token: 7140981397:AAFrPr9ZUPnqGO9QVH6YbHoBXFMd13igkAo
 
 quota:
-  url: http://localhost:8081/quota/$operation_id
+  url: http://localhost:8081/quota/telegram-api
 
