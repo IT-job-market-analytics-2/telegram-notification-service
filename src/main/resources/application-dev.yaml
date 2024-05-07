@@ -1,6 +1,6 @@
 spring:
   rabbitmq:
-    host: localhost
+    host: rabbitmq
     username: analytics_service
     password: ${RABBIT_PASSWORD}
 
