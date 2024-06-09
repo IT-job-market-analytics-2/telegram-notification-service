@@ -1,13 +1,10 @@
-FROM eclipse-temurin:17-jdk-alpine as builder
-WORKDIR /telegram-notification
-COPY .mvn/ .mvn
-COPY mvnw pom.xml ./
-RUN ./mvnw dependency:go-offline
-COPY ./src ./src
-RUN ./mvnw clean install
+FROM maven:3.8.5-openjdk-17 AS build
+COPY /src /src
+COPY pom.xml /
+RUN mvn -f /pom.xml clean package
 
-FROM eclipse-temurin:17-jre-alpine
-WORKDIR /telegram-notification
-COPY --from=builder /telegram-notification/target/*.jar /telegram-notification/telegram-notification-service.jar
+FROM eclipse-temurin:17-jre
+WORKDIR /
+COPY --from=build /target/*.jar telegram-notification-service.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "/telegram-notification/telegram-notification-service.jar"]
+ENTRYPOINT ["java", "-jar", "telegram-notification-service.jar"]
