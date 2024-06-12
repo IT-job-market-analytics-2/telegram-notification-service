@@ -1,8 +1,8 @@
 spring:
   rabbitmq:
-    host: rabbitmq
-    username: analytics_service
-    password: ${RABBIT_PASSWORD}
+    host: ${RABBITMQ_HOST}
+    username: ${RABBITMQ_USERNAME}
+    password: ${RABBITMQ_PASSWORD}
 
 bot:
   token: ${BOT_TOKEN}
